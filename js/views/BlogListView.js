@@ -26,6 +26,7 @@ class BlogListView{
 
     getItemTemplate(blogObj){
         const result = this.itemTemplate
+                .replace("{{this.blog_id}}", blogObj.id)
                 .replace("{{this.blog_title}}", blogObj.title)
                 .replace("{{this.author_name}}", blogObj.author)
                 .replace("{{this.blog_date}}", blogObj.time)

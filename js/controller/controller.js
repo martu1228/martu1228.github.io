@@ -4,21 +4,21 @@ import BlogItemModel from '/js/models/BlogItemModel.js';
 import BlogListView from '/js/views/BlogListView.js';
 
 
-class Controller{
-    constructor(){
+class Controller {
+    constructor() {
         // this.blogItemModel = new BlogItemModel();
         this.blogListModel = new BlogListModel();
         this.blogListView = new BlogListView();
         this.blogObjects = [];
     }
 
-    init(){
+    init() {
         console.log("fjeoieo");
         this.blogListModel.fetchAllBlog()
             .then((data) => {
                 console.log(data);
-                for(const obj of data){
-                    
+                for (const obj of data) {
+
                 }
                 this.getAllBlogData(data);
                 this.displayBlogList(data);
@@ -30,20 +30,43 @@ class Controller{
         //     .then(data => this.displayBlogList(data));
     }
 
+    initForDetail() {
+        console.log("Detail");
+        this.blogListModel.fetchAllBlog()
+            .then((data) => {
+                this.getAllBlogData(data);
+                this.displayBlogDetail(data);
+            }).then((data)=>{
 
-    displayBlogList(blogObjects){
+            });
+    }
+
+
+    displayBlogList(blogObjects) {
         const templates = [];
-        for(let blogObj of Object.values(blogObjects)){
+        for (let blogObj of Object.values(blogObjects)) {
             templates.push(this.blogListView.getItemTemplate(blogObj));
         }
 
         this.blogListView.render(templates);
     }
 
+    displayBlogDetail(blogObjects) {
+        const templates = [];
+        var url = window.location.pathname;
+        var id = url.substring(url.lastIndexOf('/') + 1);
+        for (let blogObj of Object.values(blogObjects)) {
+            console.log("items"+blogObj.title);
+            // templates.push(this.blogListView.getItemTemplate(blogObj));
+        }
 
-    getAllBlogData(data){
+        this.blogListView.render(templates);
+    }
+
+
+    getAllBlogData(data) {
         this.blogObjects = [];
-        for(let blog of Object.values(data)){
+        for (let blog of Object.values(data)) {
             const blogObj = new BlogItemModel(
                 blog.id,
                 blog.title,
