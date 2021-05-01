@@ -27,6 +27,10 @@
       }
     </script>
     <title>Muscles Arena</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js" integrity="sha512-BmoWLYENsSaAfQfHszJM7cLiy9Ml4I0n1YtBQKfx8PaYpZ3SoTXfj3YiDNn0GAdveOCNbK8WqQQYaSb0CMjTHQ==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettyPhoto/3.1.6/js/jquery.prettyPhoto.min.js" integrity="sha512-IB7NSySDRedVEsYsOVuzN5O5jwRjV2ewVVmkDFIgE0yNu11GreBCOMv07i7hlQck41T+sTXSL05/cG+De4cZDw==" crossorigin="anonymous"></script>
+
     <link
       rel="stylesheet"
       id="wp-block-library-css"
@@ -832,6 +836,9 @@
         font-size: 16px;
       }
 
+      ul.mobile-menu-pro li {
+        display: block;
+      }
       .mobile-menu-icon-pro {
         min-width: 19px;
         color: #ffffff;
@@ -3906,6 +3913,17 @@
         .catch(function (error) {
           console.log(error);
         });
+    </script>
+    <script>
+      $(".mobile-menu-icon-pro").click(function(){
+        if($("#masthead-pro").hasClass('active-mobile-icon-pro')){
+          $("#masthead-pro").removeClass('active-mobile-icon-pro');
+          $('#main-nav-mobile').attr("style", "display: none");
+        }else{
+          $("#masthead-pro").addClass('active-mobile-icon-pro');
+          $('#main-nav-mobile').attr("style", "display: block");
+        }
+      });
     </script>
     <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
   </body>

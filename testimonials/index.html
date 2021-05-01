@@ -28,6 +28,9 @@
     }
   </script>
   <title>Muscles Arena</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js" integrity="sha512-BmoWLYENsSaAfQfHszJM7cLiy9Ml4I0n1YtBQKfx8PaYpZ3SoTXfj3YiDNn0GAdveOCNbK8WqQQYaSb0CMjTHQ==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettyPhoto/3.1.6/js/jquery.prettyPhoto.min.js" integrity="sha512-IB7NSySDRedVEsYsOVuzN5O5jwRjV2ewVVmkDFIgE0yNu11GreBCOMv07i7hlQck41T+sTXSL05/cG+De4cZDw==" crossorigin="anonymous"></script>
   <link rel="stylesheet" id="wp-block-library-css"
     href="https://149346710.v2.pressablecdn.com/wp-includes/css/dist/block-library/style.min.css" type="text/css"
     media="all" />
@@ -829,6 +832,10 @@
 
     #main-nav-mobile {
       background: #1f2026;
+    }
+
+    ul.mobile-menu-pro li {
+      display: block;
     }
 
     ul.mobile-menu-pro li a {
@@ -2452,6 +2459,17 @@ progression_studios_default_navigation_color					progression-studios-one-page-na
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(t, s);
     })();
+  </script>
+  <script>
+    $(".mobile-menu-icon-pro").click(function(){
+      if($("#masthead-pro").hasClass('active-mobile-icon-pro')){
+        $("#masthead-pro").removeClass('active-mobile-icon-pro');
+        $('#main-nav-mobile').attr("style", "display: none");
+      }else{
+        $("#masthead-pro").addClass('active-mobile-icon-pro');
+        $('#main-nav-mobile').attr("style", "display: block");
+      }
+    });
   </script>
 </body>
 

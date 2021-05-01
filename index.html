@@ -7,6 +7,9 @@
   <link rel="profile" href="https://gmpg.org/xfn/11">
   <script>function fvmuag() { if (navigator.userAgent.match(/x11.*fox\/54|oid\s4.*xus.*ome\/62|oobot|ighth|tmetr|eadles|ingdo/i)) return !1; if (navigator.userAgent.match(/x11.*ome\/75\.0\.3770\.100/i)) { var e = screen.width, t = screen.height; if ("number" == typeof e && "number" == typeof t && 862 == t && 1367 == e) return !1 } return !0 }</script>
   <title>Muscles Arena</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js" integrity="sha512-BmoWLYENsSaAfQfHszJM7cLiy9Ml4I0n1YtBQKfx8PaYpZ3SoTXfj3YiDNn0GAdveOCNbK8WqQQYaSb0CMjTHQ==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettyPhoto/3.1.6/js/jquery.prettyPhoto.min.js" integrity="sha512-IB7NSySDRedVEsYsOVuzN5O5jwRjV2ewVVmkDFIgE0yNu11GreBCOMv07i7hlQck41T+sTXSL05/cG+De4cZDw==" crossorigin="anonymous"></script>
   <link rel='stylesheet' id='wp-block-library-css'
     href='https://149346710.v2.pressablecdn.com/wp-includes/css/dist/block-library/style.min.css' type='text/css'
     media='all' />
@@ -792,9 +795,15 @@
       background: #1f2026;
     }
 
+    ul.mobile-menu-pro li {
+      display: block;
+    }
+
     ul.mobile-menu-pro li a {
       color: rgba(255, 255, 255, 0.8);
+      
     }
+    
 
     ul.mobile-menu-pro li a {
       letter-spacing: 0em;
@@ -1368,6 +1377,9 @@
       background: #25c3a3;
     }
   </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js" integrity="sha512-BmoWLYENsSaAfQfHszJM7cLiy9Ml4I0n1YtBQKfx8PaYpZ3SoTXfj3YiDNn0GAdveOCNbK8WqQQYaSb0CMjTHQ==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettyPhoto/3.1.6/js/jquery.prettyPhoto.min.js" integrity="sha512-IB7NSySDRedVEsYsOVuzN5O5jwRjV2ewVVmkDFIgE0yNu11GreBCOMv07i7hlQck41T+sTXSL05/cG+De4cZDw==" crossorigin="anonymous"></script>
   <link rel='stylesheet' id='elementor-icons-css'
     href='https://149346710.v2.pressablecdn.com/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css'
     type='text/css' media='all' />
@@ -3532,6 +3544,17 @@ progression_studios_default_navigation_color					progression-studios-one-page-na
       var s = document.getElementsByTagName('script')[0];
       s.parentNode.insertBefore(t, s);
     })();</script>
+    <script>
+      $(".mobile-menu-icon-pro").click(function(){
+        if($("#masthead-pro").hasClass('active-mobile-icon-pro')){
+          $("#masthead-pro").removeClass('active-mobile-icon-pro');
+          $('#main-nav-mobile').attr("style", "display: none");
+        }else{
+          $("#masthead-pro").addClass('active-mobile-icon-pro');
+          $('#main-nav-mobile').attr("style", "display: block");
+        }
+      });
+    </script>
 </body>
 
 </html>
